@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+:root {
+    --cor-primaria: #594B39;
+    --cor-secundaria: #F2DFBB;
+    --cor-terciaria: #D8DFE8;
+    --cor-quaternaria: #311515;
+    --fonte-primaria: "Libre Baskerville", serif;
+    --espessura-fonte-padrao: 400;
+}
+
+.div__logo {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5%;
+    padding: 1% 2%;
+    height: 10%;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    margin: 0;
+    padding-bottom: 1px;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, #594B39, #8C7C5D);
+    background-size: cover;
+    background-position: bottom;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+body.dark {
+    background-color: #000;
+    opacity: 0.5;
+}
+
+body.dark .tituloTema {
+    color: var(--cor-terciaria);
+}
+
+#img-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--cor-terciaria);
+}
+
+#img-gatos {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.modoDark {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    text-align: left;
+    gap: 20px;
+}
+
+#historyContainer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--cor-primaria);
+}
+
+#closeHistoryButton {
+    position: absolute;
+    font-weight: 600;
+    color: var(--cor-quaternaria);
+    background-color: var(--cor-terciaria);
+    border-radius: 20px;
+    border: 1px 5px 1px var(--cor-primaria);
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#historyContainer div:last-child {
+    border-bottom: none;
+}
+
+#historyButton {
+    position: relative;
+    font-weight: 600;
+    color: var(--cor-quaternaria);
+    background-color: var(--cor-terciaria);
+    border-radius: 20px;
+    border: 1px 5px 1px var(--cor-primaria);
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#historyButton:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+#historyContainer {
+    display: none;
+    margin-top: 1%;
+    text-align: center;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.tituloTema {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--cor-quaternaria);
+}
+
+.trilho {
+    box-sizing: border-box;
+    width: 100px;
+    height: 50px;
+    background-color: var(--cor-primaria);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.trilho.dark {
+    background-color: var(--cor-terciaria);
+}
+
+.trilho .indicador {
+    width: 45px;
+    height: 45px;
+    margin-left: 2%;
+    background-color: var(--cor-terciaria);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: left 0.5s;
+}
+
+/* Aqui não há espaço entre as palavras porque queremos que a função seja executada
+quando a classe dark seja executada junto com a classe trilho */
+.trilho.dark .indicador {
+    left: 50px;
+    background-color: var(--cor-primaria);
+}
+
+.tituloTema.dark h1 {
+    color: var(--cor-terciaria);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35%;
+    width: 60%;
+    height: 45%;
+    margin: 5% 15%;
+
+    /* margin-left: 10%;
+    margin-top: 5%; */
+}
+
+.div__entradas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    border: transparent;
+}
+
+/* .div__resultados {
+    display: flex;
+
+} */
+
+#entrada {
+    position: relative;
+    border: transparent;
+    border-radius: 10px;
+    width: 90%;
+    height: 60%;
+    border: none;
+    resize: none;
+    padding: 0 3%;
+    color: var(--cor-secundaria);
+    background-color: transparent;
+    font-size: 1.5rem;
+    text-transform: lowercase;
+}
+
+#entrada::placeholder {
+    color: var(--cor-primaria);
+    font-size: 2rem;
+    font-weight: 400;
+    height: 90%;
+    width: 90%;
+}
+
+#img-alerta {
+    background-color: var(--cor-terciaria);
+    border-radius: 30px;
+}
+
+.alerta {
+    display:flex;
+    align-items: flex-start;
+    color: var(--cor-primaria);
+    font-size: 1rem;
+    font-weight: 400;
+    text-align:left;
+    padding: 1%;
+    border-radius: 10px;
+    margin-top: 10%;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 2%;
+}
+
+#btn-cript {
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: var(--cor-primaria);
+    border: 1px solid var(--cor-primaria);
+    border-radius: 22px;
+    padding: 4%;
+    gap: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
+#btn-cript:hover {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+}
+
+#btn-descript {
+    font-weight: 400;
+    color: var(--cor-primaria);
+    background-color: #D8DFE8;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 22px;
+    padding: 4%;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+#btn-descript:hover {
+    background-color: var(--cor-hover-descript);
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria)
+}
+
+
+#texto-resultado {
+    box-sizing: border-box;
+    align-items: center;
+    width: 90%;
+    border: 5px solid var(--cor-primaria);
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    margin-top: auto;
+    font-size: 1.7rem;
+    padding: 3% 3% 3% 3%;
+    color: var(--cor-primaria);
+}
+
+#com-resultado {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#sem-resultado {
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid var(--cor-primaria);
+    background-color: var(--cor-primaria);
+    border-radius: 30px;
+    width: 100%;
+    padding: 3% 3% 3% 3%;
+}
+
+
+.semResultadoTitulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-terciaria);
+    margin-top: 5%;
+}
+
+.semResultadoTexto {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--cor-terciaria);
+    margin: 5% 5%;
+}
+.acoes__botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+    padding: 2%;
+}
+
+#btn-copy {
+    box-sizing: border-box;
+    font-weight: 400;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    border-radius: 24px;
+    border: 1px 5px 15px rgb(82, 40, 40);
+    padding: 4%;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 50%;
+    margin: 2% 20%;
+}
+
+#btn-copy:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.btnPaste {
+    font-weight: 400;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    border-radius: 20px;
+    border: 1px 5px 1px var(--cor-primaria);
+    padding: 2px;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 60%;
+    margin-top: 1%;
+}
+
+.btnPaste:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.btnLimpar {
+    font-weight: 400;
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    border-radius: 20px;
+    border: 1px 5px 1px var(--cor-primaria);
+    padding: 2px;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 60%;
+    margin-top: 1%;
+}
+
+.btnLimpar:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: var(--cor-secundaria)
+}
+
+footer {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: var(--cor-terciaria);
+    background-color: var(--cor-primaria);
+    border-radius: 10px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1rem;
+    font-weight: 400;
+    width: 100%;
+    padding: 10px;
+}
+
+.link__git {
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#logo_git {
+    background-color: var(--cor-primaria);
+}
+
+@media (max-width: 1300px) {
+
+    #img-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    body {
+        height: auto;
+        max-height: 1500px;
+    }
+
+    body::before {
+        background-repeat:repeat-y;
+        background-position: center;
+        background-size: cover;
+        min-height: 100hv;
+    }
+
+    .div__logo {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        padding: 2% 2%;
+        height: 8%;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 40px;
+    }
+
+    .div__entradas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 150%;
+        height: 55vh;
+    }
+
+    .div__resultados {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #entrada {
+        text-align: justify;
+        width: 90%;
+        height: 20vh;
+        font-size: 1.5rem;
+        text-align: center;
+        color: var(--cor-primaria);
+    }
+
+    ::placeholder {
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: justify;
+    }
+
+    #btn-cript {
+        font-size: 1rem;
+        padding: 10px;
+        width: 120%;
+    }
+
+    #btn-descript {
+        font-size: 1rem;
+        padding: 10px;
+        width: 120%;
+    }
+
+    .btnPaste {
+        font-size: 1rem;
+        padding: 8px;
+        width: 120%;
+    }
+
+    .btnLimpar {
+        font-size: 1rem;
+        padding: 8px;
+        width: 120%;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #img-gatos {
+        display: none;
+    }
+
+    #sem-resultado {
+        display: flex;
+        width: 100%;
+        height: 50%;
+        margin-right: 25%;
+    }
+
+    .semResultadoTexto {
+        font-size: 1.5rem;
+    }
+
+    .semResultadoTitulo {
+        font-size: 2rem;
+    }
+
+    .alerta {
+        margin-top: 5%;
+    }
+
+    #texto-resultado {
+        box-sizing: border-box;
+        width: 80vw;
+        height: 30vh;
+        margin-right: 10%;
+    }
+
+    #btn-copy {
+        width: 40%;
+        margin-left: 29%;
+    }
+
+    .conteudo__historico {
+        display: none;
+    }
+
+    .trilho.dark .indicador {
+        left: 26px;
+    }
+
+     footer {
+        position: relative;
+    }
+}
+

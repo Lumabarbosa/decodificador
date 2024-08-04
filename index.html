@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Decodificador de Texto">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"  rel = "folha de estilo" >
+    <script defer type="text/javascript" src="./js/script.js"></script>
+    <title>Novo Decodificador de Texto</title>
+</head>
+<body>
+    <header class="div__logo">
+        <img id="img-logo" src="./assets/gatosozinho.jpg" alt="Logo gato sozinho">
+        <div class="modoDark">
+            <!-- Modo Dark e Modo Light -->
+            <h1 class="tituloTema">Modo:<br>Light ou Dark</h1>
+            <div id="trilho" class="trilho">
+                <div class="indicador"></div>
+            </div>
+        </div>
+        <!-- Histórico -->
+        <div class="conteudo__historico">
+            <button id="historyButton" style="display: block;">Histórico</button>
+            <button id="closeHistoryButton" style="display: none;">Ocultar Histórico</button>
+        </div>
+        <div id="historyContainer"></div>
+    </header>
+    <main>
+        <section id="div__entradas" class="div__entradas">
+            <textarea type="text" id="entrada" class="textoEntrada" placeholder="Digite seu texto aqui..." cols="30" rows="7"></textarea>
+            <div class="acoes__botoes">
+                <button type="button" class="btnPaste" id="btn-paste" style="display: none;">Colar</button>
+                <button type="button" class="btnLimpar" id="btn-clear" style="display: none;">Limpar</button>
+            </div>
+            <div class="alerta">
+                <img id="img-alerta" src="./assets/vector.png" alt="Alerta">
+                <span class="span__tema">    Apenas letras minúsculas e sem acento.</span>
+            </div>
+            <div class="botoes">
+                <button type="button" class="btnCriptografar" id="btn-cript">Criptografar</button>
+                <button type="button" class="btnDescriptografar" id="btn-descript">Descriptografar</button>
+            </div>
+        </section>
+        <section class="div__resultado">
+            <div id="com-resultado" style="display: none;"></div>
+                    <textarea style="display: none;" id="texto-resultado" class="textoResultado" cols="30" rows="7"></textarea>
+                    <button  style="display: none;" type="button" class="btnCopiar" id="btn-copy">Copiar</button>
+            </div>
+            <div id="sem-resultado" style="display: block;">
+                <img id="img-gatos" src="./assets/gatos.jpg" alt="Desenho de uma pessoa">
+                <h2 class="semResultadoTitulo">Nenhuma mensagem encontrada</h2>
+                <p class="semResultadoTexto">Digite um texto que você deseja criptografar ou descriptografar.</p>
+            </div>
+        </section>
+    </main>
+<footer class="rodape">
+    <a class="link__git" href="https://github.com/Lumabarbosa">
+        <img id="logo_git" src="./assets/github.png" alt="Logo do GitHub">github.com/Lumabarbosa
+    </a><br>
+    @Desenvolvido por Luma Barbosa<br>
+    Challenge Formação Alura & Oracle Next Education
+</footer>
+</body>
+</html>
