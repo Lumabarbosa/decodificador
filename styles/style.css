@@ -283,7 +283,6 @@ main {
     color: var(--cor-secundaria)
 }
 
-
 #texto-resultado {
     box-sizing: border-box;
     align-items: center;
@@ -295,6 +294,7 @@ main {
     font-size: 1.7rem;
     padding: 3% 3% 3% 3%;
     color: var(--cor-primaria);
+    text-transform: lowercase;
 }
 
 #com-resultado {
@@ -450,7 +450,7 @@ footer {
         justify-content: center;
         align-items: center;
         gap: 10%;
-        padding: 2% 2%;
+        padding: 4% 2%;
         height: 8%;
     }
 
